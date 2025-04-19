@@ -25,7 +25,7 @@ JOIN productos pr ON p.id_producto = pr.id_producto";
         <h2 class="titulo-perdidas">Control de Pérdidas</h2>
 
         <div class="contenedor-botones">
-            <a href="DashBoard" class="boton-regresar">Regresar</a>
+            <a href="../dashboard.html" class="boton-regresar">Regresar</a>
             <a href="agregar_perdida.php" class="btn-agregar">Agregar Pérdida</a>
         </div>
 
