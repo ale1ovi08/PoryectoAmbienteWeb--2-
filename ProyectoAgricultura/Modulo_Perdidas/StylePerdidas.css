@@ -1,0 +1,144 @@
+/* CSS Listado Perdida */
+
+.control-perdidas {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.titulo-perdidas {
+    text-align: center;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+.btn-agregar {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tabla-perdidas {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabla-perdidas th,
+.tabla-perdidas td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla-perdidas th {
+    background-color: #ccd0d1;
+}
+
+.btn-accion {
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.btn-accion.editar {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+.btn-accion.eliminar {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* CSS Agregar Perdida y Editar*/
+
+.titulo-formulario {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.formulario-perdida {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.campo-formulario {
+    margin-bottom: 15px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.botones-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.boton-regresar,
+.boton-enviar {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-regresar {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.boton-enviar {
+    background-color: #27ae60;
+    color: white;
+}
+
+.boton-regresar:hover {
+    background-color: #7f8c8d;
+}
+
+.boton-enviar:hover {
+    background-color: #1e8449;
+}
