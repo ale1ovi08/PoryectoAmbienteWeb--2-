@@ -1,28 +1,42 @@
-<!-- Seccion que controla el menu despues del login -->
+<?php
+include("conectar.php");
+
+$id = $_GET['id'];
+$result = $conexion->query("SELECT * FROM categorias WHERE id_categoria = $id");
+$categoria = $result->fetch_assoc();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+
+    $stmt = $conexion->prepare("UPDATE categorias SET nombre_categoria = ?, descripcion = ? WHERE id_categoria = ?");
+    $stmt->bind_param("ssi", $nombre, $descripcion, $id);
+    $stmt->execute();
+
+    header("Location: categorias.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Editar Categoría</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body onload="verificarSesion()">
-
-    <body onload="verificarSesion()">
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container">
-                <a class="navbar-brand" href="#">Inventario Agrícola</a>
+                <a class="navbar-brand" href="dashboard.html">Inventario Agrícola</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link text-white" href="categorias.php">Categorías</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="productos.php">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Categorías</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Productos</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="#">Ventas</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="Modulo_Perdidas/listadoPerdida.php">Pérdidas</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
@@ -30,16 +44,23 @@
                 </div>
             </div>
         </nav>
-    
-        <div class="container mt-5">
-            <h2>Bienvenido al Panel de Control</h2>
-            <p>Desde aquí podrás administrar tu inventario de agricultor.</p>
+<div class="container mt-5">
+    <h2>Editar Categoría</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<?= $categoria['nombre_categoria'] ?>" required>
         </div>
-    
-        
-    
-        <!-- Footer -->
-        <footer class="bg-success text-white text-center py-3 mt-5">
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea name="descripcion" class="form-control" required><?= $categoria['descripcion'] ?></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="categorias.php" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+<!-- Footer -->
+<footer class="bg-success text-white text-center py-3 mt-5">
             <div class="container">
                 <p class="mb-2">Síguenos en nuestras redes sociales</p>
                 <div>
@@ -56,23 +77,7 @@
                 <p class="mt-3">&copy; 2025 Inventario Agrícola. Todos los derechos reservados.</p>
             </div>
         </footer>
-    
-        <!-- Scripts -->
-        <script>
-            function verificarSesion() {
-                if (!localStorage.getItem("usuarioLogueado")) {
-                    window.location.href = "index.html";
-                }
-            }
-    
-            function cerrarSesion() {
-                localStorage.removeItem("usuarioLogueado");
-                window.location.href = "index.html";
-            }
-        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    </body>
-    </html>
-    
+</body>
+</html>
