@@ -39,8 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="nav-item"><a class="nav-link text-white" href="categorias.php">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="productos.php">Productos</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Ventas</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="Modulo_Perdidas/listadoPerdida.php">Pérdidas</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="Modulo_Perdidas/listadoPerdida.php">Pérdidas</a>
             </ul>
         </div>
     </div>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="StylePerdidas.css">
-    <title>Agregar Pérdida</title>
+    <link rel="stylesheet" href="StyleVentas.css">
+    <title>Agregar Venta</title>
 </head>
 
 <body>
@@ -13,23 +13,23 @@
     if (isset($_POST['enviar'])) {
         $id_producto = $_POST['id_producto'];
         $cantidad = $_POST['cantidad'];
-        $motivo = $_POST['motivo'];
+        $total = $_POST['total'];
         $fecha = $_POST['fecha'];
 
         include("conexion.php");
-        $stmt = $conexion->prepare("INSERT INTO perdidas ( id_producto, cantidad, motivo, fecha_registro) VALUES (?,?,?,?)");
-        $stmt->bind_param("iiss", $id_producto, $cantidad, $motivo, $fecha_registro);
+        $stmt = $conexion->prepare("INSERT INTO ventas ( id_producto, cantidad, total, fecha_venta) VALUES (?,?,?,?)");
+        $stmt->bind_param("iiis", $id_producto, $cantidad, $total, $fecha_registro);
 
         if ($stmt->execute()) {
-            header("Location: listadoPerdida.php");
+            header("Location: listadoVenta.php");
             exit();
         }                                                             
             
     }
     ?>
-<h2 class="titulo-formulario">Agregar Pérdida</h2> 
+<h2 class="titulo-formulario">Agregar Venta</h2> 
 
-<form class="formulario-perdida" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+<form class="formulario-venta" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
     <div class="campo-formulario">
         <label>ID producto:</label>
         <input type="number" name="id_producto" id="id_producto" required>
@@ -41,8 +41,8 @@
     </div>
 
     <div class="campo-formulario">
-        <label>Motivo:</label>
-        <input type="text" name="motivo" id="motivo" required>
+        <label>Total:</label>
+        <input type="text" name="total" id="total" required>
     </div>
 
     <div class="campo-formulario">
@@ -51,9 +51,9 @@
     </div>
 
     <div class="botones-formulario">
-        <a class="boton-regresar" href="listadoPerdida.php">Regresar</a>
+        <a class="boton-regresar" href="listadoVenta.php">Regresar</a>
         <input class="boton-enviar" type="submit" name="enviar" value="AGREGAR">
     </div>
-</form>
+</form> 
 </body>
 </html>

@@ -26,9 +26,8 @@ $resultado = $conexion->query($query);
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link text-white" href="categorias.php">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Productos</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Ventas</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="Modulo_Ventas/listadoVenta.php">Ventas</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="Modulo_Perdidas/listadoPerdida.php">Pérdidas</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>

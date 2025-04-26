@@ -1,6 +1,6 @@
-/* CSS Listado Perdida */
+/* CSS Listado Venta */
 
-.control-perdidas {
+.control-Ventas {
     padding: 20px;
     background-color: #f7f7f7;
     border-radius: 10px;
@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-.titulo-perdidas {
+.titulo-Ventas {
     text-align: center;
     background-color: #1f875e;
     color: white;
@@ -35,20 +35,20 @@
     margin-bottom: 20px;
 }
 
-.tabla-perdidas {
+.tabla-Ventas {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
 }
 
-.tabla-perdidas th,
-.tabla-perdidas td {
+.tabla-Ventas th,
+.tabla-Ventas td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
 }
 
-.tabla-perdidas th {
+.tabla-Ventas th {
     background-color: #ccd0d1;
 }
 
@@ -69,7 +69,7 @@
     color: #fff;
 }
 
-/* CSS Agregar Perdida y Editar*/
+/* CSS Agregar Venta y Editar*/
 
 .titulo-formulario {
     text-align: center;
@@ -79,7 +79,7 @@
     font-weight: bold;
 }
 
-.formulario-perdida {
+.formulario-venta {
     max-width: 500px;
     margin: 0 auto;
     padding: 25px;
