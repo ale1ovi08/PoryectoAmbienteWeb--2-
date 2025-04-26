@@ -7,6 +7,7 @@
     <title>Panel de Control</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="verificarSesion()">
 
@@ -36,7 +37,70 @@
             <p>Desde aquí podrás administrar tu inventario de agricultor.</p>
         </div>
     
-        
+         <!-- Header -->
+    <header class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-md-start text-center">
+                <h4>AGROSMART</h4>
+                <h1>Control Preciso, Cosechas Exitosas.</h1>
+                <p>
+                    En Inventario Agrícola, nos dedicamos a proporcionar una solución tecnológica eficiente para la gestión de inventarios y ventas en el sector agrícola. 
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <img src="images/header.png" class="img-fluid custom-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Beneficios -->
+    <section class="container text-center mt-5">
+        <h2 class="mb-4 fw-bold">BENEFICIOS DE NUESTRA EMPRESA</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/card1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Información sobre el inventario agrícola</h5>
+                        <p class="card-text">Registro detallado de productos cultivados para mejorar planificación y evitar desperdicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/card2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Beneficios del sistema</h5>
+                        <p class="card-text">Optimiza la gestión de productos, reduce pérdidas y mejora la eficiencia del negocio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/card3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Control de ventas e inventarios</h5>
+                        <p class="card-text">Facilita el seguimiento de productos, reportes financieros y decisiones estratégicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos de la Temporada -->
+    <section class="container text-center mt-5">
+        <h2 class="mb-4 fw-bold">🌱 Productos de la Temporada</h2>
+        <div class="row justify-content-center" id="productosTemporada">
+            <!-- Aquí se cargarán los productos dinámicamente con JavaScript -->
+        </div>
+    </section>
+    <!-- Sección de Productos de la Temporada -->
+<section class="container text-center mt-5">
+    <div class="row justify-content-center" id="productosTemporada">
+        <!-- Los productos se cargarán dinámicamente aquí -->
+    </div>
+   
+</section>
     
         <!-- Footer -->
         <footer class="bg-success text-white text-center py-3 mt-5">
